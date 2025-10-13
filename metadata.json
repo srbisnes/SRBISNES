@@ -1,0 +1,5 @@
+{
+  "name": "P2P Crypto Arbitrage Analyzer",
+  "description": "An application to analyze P2P cryptocurrency arbitrage opportunities between different exchanges by simulating market data with AI. Users can select exchanges, crypto assets, and fiat currencies to find potential profit margins.",
+  "requestFramePermissions": []
+}
