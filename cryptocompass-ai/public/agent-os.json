@@ -1,0 +1,1 @@
+{"name":"CryptoCompass AI","builder":"ELCRYPTOBOY","description":"Beginner-first crypto research agent for Binance Agent OS","track":"A","mcp":{"server":"https://agent.binance.com/mcp/agentic","transport":"http"},"capabilities":["market-data","research","education","risk-explanation"],"execution":"disabled-by-design"}
