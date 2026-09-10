@@ -2,11 +2,13 @@
 
 **Sovereign Intelligence Where Data Lives**
 
+**Live demo:** https://trustmesh-ai.vercel.app/
+
 TrustMesh AI is a functional hackathon MVP for collaborative fraud intelligence. It models three independent bank nodes, specialized Fraud/Risk/Compliance agents, a consensus layer and a SHA-256 audit trail.
 
 ## Demo
 
-Open the Vercel production deployment and use **Simulation → Generate Fraud Event**. The demo is deterministic and stores only demo events in the browser's localStorage. No customer data or API key is required.
+Open the live Vercel deployment and use **Simulation → Generate Fraud Event**. The demo is deterministic and stores only demo events in the browser's localStorage. No customer data or API key is required.
 
 ## Product thesis
 
