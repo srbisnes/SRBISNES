@@ -2,33 +2,72 @@
 
 **Sovereign Intelligence Where Data Lives**
 
-**Live demo:** https://trustmesh-ai.vercel.app/
+TrustMesh AI is a functional hackathon MVP for collaborative fraud intelligence. It demonstrates three independent bank nodes, specialized Fraud/Risk/Compliance agents, a consensus layer and a SHA-256 audit commitment.
 
-TrustMesh AI is a functional hackathon MVP for collaborative fraud intelligence. It models three independent bank nodes, specialized Fraud/Risk/Compliance agents, a consensus layer and a SHA-256 audit trail.
+## Live demo
 
-## Demo
+Use **Simulation → Generate Fraud Event**. The browser runs the complete deterministic decision pipeline, stores demo events locally and produces a real SHA-256 fingerprint. No customer data, banking credentials or API keys are required.
 
-Open the live Vercel deployment and use **Simulation → Generate Fraud Event**. The demo is deterministic and stores only demo events in the browser's localStorage. No customer data or API key is required.
+## What is real in this MVP
+
+- Responsive enterprise-style application shell.
+- Five working views: Overview, Dashboard, Simulation, Agent Center and Audit Center.
+- Three simulated institution nodes.
+- Independent fraud, risk and compliance scoring.
+- Policy-aware consensus producing ALLOW / REVIEW / BLOCK.
+- Confidence score and explainable agent reasons.
+- SHA-256 integrity commitment using the Web Crypto API.
+- Local event ledger with up to 100 demo decisions.
+- Clear/reset demo state.
+- No live transaction execution.
 
 ## Product thesis
 
 **Move intelligence, not sensitive data.**
 
-The MVP is a collaboration/control-plane concept rather than a replacement for mature fraud engines. The production path is institution-local inference + secure aggregation + differential privacy + signed policy controls + human review + cryptographic audit anchoring.
+TrustMesh is positioned as a collaboration/control-plane layer rather than a replacement for mature fraud engines. The production architecture is institution-local inference + privacy-preserving signal exchange + secure aggregation + differential privacy + signed policy controls + human review + cryptographic audit anchoring.
 
 ## Competitive position
 
-FICO Falcon and similar platforms have deep production fraud capabilities and large consortium datasets. TrustMesh differentiates at the collaboration layer: cross-institution intelligence without centralizing raw transaction records, plus multi-agent explainability and verifiable decision integrity.
+Established fraud platforms such as FICO Falcon have major advantages in production models, consortium data, integrations and operating history. TrustMesh should not claim to beat those systems at raw fraud detection today. Its differentiation is the collaboration layer: enabling institutions to share useful intelligence without creating a central raw-data lake, with multi-agent explainability and verifiable decision integrity.
+
+## Production architecture
+
+```text
+Bank Alpha                 Bank Beta                 Bank Gamma
+Local data + model         Local data + model       Local data + model
+      |                           |                         |
+      +---------- Privacy / Policy Boundary ---------------+
+                              |
+                    TrustMesh Intelligence Mesh
+                              |
+                  Secure Aggregation / DP
+                              |
+                    Consensus + Policy Engine
+                              |
+                    Human Review / Decision
+                              |
+                    Cryptographic Audit Log
+```
 
 ## Roadmap
 
-1. Local model runtime at each institution.
-2. Secure aggregation and differential privacy.
-3. Policy engine and institution-specific thresholds.
-4. Signed agent attestations and replay protection.
-5. Bank/AML connector SDK.
-6. Human-in-the-loop case management.
-7. Permissioned/public ledger hash anchoring.
-8. Threat modeling, red-team validation and enterprise controls.
+1. Replace deterministic scoring with institution-local model runtimes.
+2. Add secure aggregation and differential privacy.
+3. Add signed policies, agent attestations and replay protection.
+4. Add mTLS, RBAC/IAM and institutional identity.
+5. Add AML/KYC/bank connector SDKs and case management.
+6. Add model/version registry and decision replay.
+7. Anchor audit commitments to a permissioned ledger, public chain or WORM storage.
+8. Threat modeling, red-team testing, observability and enterprise controls.
 
-Built for the DOJO MVP by **ElCryptoBoy**.
+## Demo narrative
+
+1. Open Dashboard: show 3 healthy nodes and zero raw data shared.
+2. Open Simulation: generate a $50,000 suspicious transfer from a new device and unknown country.
+3. Open Agent Center: show Fraud, Risk and Compliance reasoning.
+4. Return to Decision: show the consensus score and BLOCK/REVIEW/ALLOW action.
+5. Open Audit Center: show the SHA-256 commitment and timestamp.
+6. Explain the production upgrade: the demo simulates the control plane; real banks would run their inference locally.
+
+Built for DOJO by **ElCryptoBoy**.
